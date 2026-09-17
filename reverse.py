@@ -174,6 +174,8 @@ def process_input_file(filename="input.txt"):
         if all_discovered_domains:
             print("\n" + "=" * 60)
             print(f"Saving {len(all_discovered_domains)} discovered domain(s) to collected.txt...")
+            # include main domains too
+            all_discovered_domains.extend(domains)
             # Remove duplicates
             unique_domains = list(set(all_discovered_domains))
             saved = save_to_collected(unique_domains)
